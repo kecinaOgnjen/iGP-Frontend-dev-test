@@ -5,9 +5,9 @@ function Select({name, code, valueList}) {
     const {handleChange} = useContext(FormContext);
 
     return (
-        <div>
+        <div className={"input-container"}>
             <label htmlFor={name}>{name}</label>
-            <select id={name} onChange={event =>{ 
+            <select style={{padding: 15}} id={name} onChange={event =>{
                     handleChange(code, event);
                 }}>
                 {valueList.map((value, i) =>{

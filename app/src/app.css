@@ -1,0 +1,47 @@
+/*Basic style*/
+html, body, #root {
+    height: 110%;
+    padding: 0;
+    margin: 0;
+    background-image: url('../public/images/monkey.jpg');
+    background-repeat: repeat;
+    font-family: 'Montserrat', sans-serif;
+}
+.app{
+    text-align: center;
+}
+
+/*Registration form style*/
+.registration-form-container {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.96);
+    border-radius: 7px;
+    margin: 3rem auto 3rem;
+}
+
+.registration-form-container h1 {
+    background: linear-gradient(90deg, rgba(255, 0, 0, 1) 18%, rgba(0, 255, 8, 1) 48%, rgba(10, 14, 201, 1) 87%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 2.5rem 0;
+}
+
+.error-container{
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+@media only screen and (max-width: 425px) {
+    .registration-form-container {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        border: 1px solid white;
+        background-color: rgba(255, 255, 255, 0.96);
+        border-radius: 7px;
+        margin: 3rem auto 3rem;
+    }
+}

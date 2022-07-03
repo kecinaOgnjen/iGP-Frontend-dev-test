@@ -3,19 +3,20 @@ export const validateField = (validators, value, fields) => {
     if(validators && validators.length){
         for (let i = 0; i < validators.length; i++){
             const error = !validateFieldValue(validators[i], value, fields);
-            if (error){
+            if(error){
                 return validators[i].invalid_message;
             }
         }
     }
-};
+    return "";
+}
 
 /*Calling this function for each field when we are looping through argument validators in above function*/
 /*Getting key and parameters and for each case calling different function*/
 const validateFieldValue = (validator, fieldValue, fields) => {
     const parameters = validator.parameters;
 
-    switch (validator.key){
+    switch (validator.key) {
         case "maxLength": return validateMaxLength(fieldValue, parameters.targetLength)
         case "minLength": return validateMinLength(fieldValue, parameters.targetLength)
         case "regex": return validateWithRegex(fieldValue, parameters.regex)
@@ -26,7 +27,7 @@ const validateFieldValue = (validator, fieldValue, fields) => {
 
         default: return true;
     }
-};
+}
 
 /*Check if value is <= targetLength*/
 const validateMaxLength = (value, targetLength) => {

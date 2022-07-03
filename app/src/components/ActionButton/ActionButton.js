@@ -1,6 +1,5 @@
 import React from 'react';
-import Input from "../Input/Input";
-import Select from "../Select/Select";
+import './action-button.css';
 
 function ActionButton({ isSubmit, onNextStep, onSubmit, isValid }) {
 

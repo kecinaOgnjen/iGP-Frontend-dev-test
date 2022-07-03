@@ -1,4 +1,4 @@
-// import './app.css';
+import './app.css';
 import formJSON from './sampleData.json';
 import {useEffect, useState} from "react";
 import Element from "./components/Element/Element.js";
@@ -118,20 +118,25 @@ function App() {
     }
 
     return (
-        <FormContext.Provider value={{handleChange}}>
-            <div className="app">
-                {getVisibleFields().map((field, index) => <Element key={index} field={field}/>)}
-            </div>
-            <ActionButton
-                isSubmit={maxSteps === step}
-                onNextStep={handleNextStepClick}
-                onSubmit={handleSubmit}
-                isValid={validStepFields}
-            />
+        <div className={"registration-form-container"}>
             <div>
-                <span style={{ color: 'red'}}>{validateMessage}</span>
+                <FormContext.Provider value={{handleChange}}>
+                    <div className="app">
+                        <h1>Registration Form</h1>
+                        {getVisibleFields().map((field, index) => <Element key={index} field={field}/>)}
+                        <ActionButton
+                            isSubmit={maxSteps === step}
+                            onNextStep={handleNextStepClick}
+                            onSubmit={handleSubmit}
+                            isValid={validStepFields}
+                        />
+                    </div>
+                    <div className={"error-container"}>
+                        <span style={{ color: 'red'}} className={"error"}>{validateMessage}</span>
+                    </div>
+                </FormContext.Provider>
             </div>
-        </FormContext.Provider>
+        </div>
     );
 }
 
