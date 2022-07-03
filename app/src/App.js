@@ -38,6 +38,7 @@ function App() {
         }
     };
 
+    /*Finds which field have step = 1 and doing sort*/
     const getVisibleFields = () => {
         let visibleFields = [];
         visibleFields = fields.filter(field => field.step === step).sort((a, b) => {
