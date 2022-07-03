@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import formJSON from './sampleData.json';
 import {FormContext} from "./context/FormContext";
+import Element from "./components/Element/Element";
 
 function App() {
     const [fields, setFields] = useState();
